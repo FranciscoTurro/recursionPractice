@@ -8,7 +8,7 @@ const fibs = (n) => {
   }
   return array;
 };
-
+//comment
 const fibsRec = (n) => {
   if (n === 1) return 0;
   if (n === 2) return 1;
