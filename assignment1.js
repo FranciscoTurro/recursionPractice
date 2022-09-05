@@ -10,9 +10,12 @@ const fibs = (n) => {
 };
 
 const fibsRec = (n) => {
-  if (n === 1) return 0;
-  if (n === 2) return 1;
-  else return fibsRec(n - 1) + fibsRec(n - 2);
+  if (n < 2) return [0];
+  if (n === 2) return [0, 1];
+  else {
+    return [...fibsRec(n - 1), fibsRec(n - 1)[n - 2] + fibsRec(n - 1)[n - 3]]; //copies the array returned by calling the function again [...fibsrec(n-1) and appends to it the sum of the 2 last numbers  ,fibsRec(n - 1)[n - 2] + fibsRec(n - 1)[n - 3]]
+    //es la posicion n-2 y n-3 porque la cantidad de cosas en el array siempre va a ser menor por 2 numeros que n. si le doy un parametro de 3 a la funcion entonces voy a tener 0,1 en el array, posicion maxima 1. si le doy 4 va a tener 0,1,1 posicion maxima 2
+  }
 };
 
 console.log(fibs(4));
